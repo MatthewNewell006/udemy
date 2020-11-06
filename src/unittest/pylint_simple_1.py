@@ -1,6 +1,6 @@
-a = 1
-b = 2
+num1 = 1
+num2 = 2
 
-print(a)
+print(num1)
 
-print(b)
+print(num2)
