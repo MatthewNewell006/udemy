@@ -1,6 +1,15 @@
-num1 = 1
-num2 = 2
+'''
+A VERY SIMPLE SCRIPT
+'''
 
-print(num1)
+def func():
+    '''
+    a simple function
+    '''
+    first = 1
+    second = 2
 
-print(num2)
+    print(first)
+    print(second)
+
+func()
