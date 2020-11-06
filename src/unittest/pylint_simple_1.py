@@ -1,11 +1,11 @@
 '''
-A VERY SIMPLE SCRIPT
+A VERY SIMPLE SCRIPT.
+USE PYLINT AT THE COMMAND LINE TO TEST THE FILE FOR ERRORS
 '''
 
 def func():
-    '''
-    a simple function
-    '''
+    ''' A SIMPLE FUNCTION '''
+
     first = 1
     second = 2
 
