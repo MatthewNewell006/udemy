@@ -5,6 +5,7 @@ ranks  = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
 values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8,
           'Nine': 9, 'Ten': 10, 'Jack': 11, 'Queen': 12, 'King': 13, 'Ace': 14}
 
+
 class Card:
     
     def __init__(self, suit, rank):
@@ -14,6 +15,7 @@ class Card:
     
     def __str__(self):
         return self.rank + ' of ' + self.suit
+
 
 class Deck:
     
@@ -31,6 +33,7 @@ class Deck:
         
     def deal_one(self):
         return self.all_cards.pop()
+
 
 class Player:
     
@@ -53,33 +56,6 @@ class Player:
         return f'Player {self.name} has {len(self.all_cards)} cards.'
 
 
-new_deck = Deck()
-
-for card_object in new_deck.all_cards:
-    print(card_object)
-
-new_deck.shuffle()
-mycard = new_deck.deal_one()
-
-print('\n')
-print(mycard)
-print(len(new_deck.all_cards))
-
-print('\n')
-
-new_player = Player("Jose")
-print(new_player)
-print(mycard)
-new_player.add_cards(mycard)
-print(new_player)
-print(new_player.all_cards[0])
-new_player.add_cards([mycard, mycard, mycard])
-print(new_player)
-new_player.remove_one()
-print(new_player)
-print('\n')
-
-
 # GAME SETUP
 player_one = Player('One')
 player_two = Player('Two')
@@ -91,11 +67,9 @@ for x in range(26):
     player_one.add_cards(new_deck.deal_one())
     player_two.add_cards(new_deck.deal_one())
 
-print(len(player_one.all_cards))
-print(player_one.all_cards[0])
-print('\n')
 
 game_on = True
+
 
 round_num = 0
 
@@ -142,12 +116,14 @@ while game_on:
             if len(player_one.all_cards) < 5:
                 print('Player One unable to declare war')
                 print('PLAYER TWO WINS!')
+                round_num = 0
                 game_on = False
                 break
             
             elif len(player_two.all_cards) < 5:
                 print('Player Two unable to declare war')
                 print('PLAYER ONE WINS!')
+                round_num = 0
                 game_on = False
                 break
             
